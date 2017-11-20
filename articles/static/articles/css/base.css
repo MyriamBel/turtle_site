@@ -1,0 +1,146 @@
+body {
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  font-size:16px;
+  color:#333;
+  background-color:#fff;
+  padding: 10 px;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+header {
+  background-color: #2d2d64;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  height: 70px;
+}
+
+footer {
+  width: 100%;
+  position: static;
+  box-sizing: border-box;
+  background-color: #2d2d64;
+  display: block;
+  letter-spacing: 0.5px;
+}
+.maket {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 15px 0px 15px 10px;
+  margin: 90px 0; /* Отступы сверху и снизу */
+  min-width: 800px; /* Минимальная ширина */
+  max-width: 1200px; /* Максимальная ширина */
+  text-rendering: optimizelegibility;
+}
+
+.top {
+  height: 70px;
+  box-sizing: border-box;
+  font-size: 24px;
+  text-rendering: optimizelegibility;
+}
+
+.bottom {
+  box-sizing: border-box;
+  font-size: 90%;
+  padding: 3px;
+  text-rendering: optimizelegibility;
+}
+
+.top-right-side{
+  text-align:center;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 40%;
+  float: right;
+  height: 50px;
+  text-align: right;
+}
+
+.top-left-side{
+  box-sizing: border-box;
+  float: left;
+  align-items: right;
+  text-align: left;
+  width: 40%;
+  height: 50px;
+}
+
+.top-right-register-or-about{
+  float:left;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 2px;
+}
+
+.top-right-login-or-logout{
+  float: right;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 2px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  clear: both;
+  max-width: 75rem;
+  height: 0;
+  margin: 1.25rem auto;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #cacaca;
+  border-left: 0;
+  }
+
+.grid-x {
+  background-color: #
+  width: 20%;
+  float: right;
+  padding-left:5px;
+    }
+
+.cell-block {
+  padding-left: 10%;
+  padding-right: 21%;
+  }
+
+.cell-block-child{
+  margin-right: 30 px;
+  padding-right: 30px;
+}
+
+a {
+  line-height: inherit;
+  color: #2d2d64;
+  text-decoration: none;
+  cursor: pointer;
+  }
+  a img {
+    border: 0;
+    }
+
+.like-img {
+  width: 30px;
+  border-radius: 25px;
+  box-shadow: 0 0 5px #ccc;
+  color: 4c4caa;
+}
+
+.top-container{
+  align-items: center;
+  box-sizing: border-box;
+  letter-spacing: 1.5px;
+  margin-left: 100px;
+  width: 1000px;
+  height: 70px;
+}
+
+.light-middle-text{
+  color: #fff;
+}

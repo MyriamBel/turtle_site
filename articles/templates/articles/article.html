@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}" />
+{% endblock %}
+
+{% block title %}
+Статья
+{% endblock %}
+
+{% block article %}
+<div>
+    <p> {{ article.article_date }} </p>
+    <h2> {{ article.article_title }} </h2>
+    <p> {{ article.article_text }} </p>
+    <hr>
+    <div>
+        <div>
+            <p> <b>Комментарии: </b></p>
+            {% for comment in comments %}
+            <div>
+                <p> {{ comment.comments_text }} </p>
+                <hr />
+            </div>
+            {% endfor %}
+        </div>
+        <div>
+            <form action="{% url 'articlesapp:article' article.id %}" method="post">
+                {% csrf_token %}
+                {{ formset.management_form }}
+                {% for field in form %}
+                    {{ field.errors }}
+                    <p>{{ field.label_tag }}</p>
+                    <p>{{ field }}</p>
+                {% endfor %}
+                <p><input type="submit" class="button" value="Комментировать" /></p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

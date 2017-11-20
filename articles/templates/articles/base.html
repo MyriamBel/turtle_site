@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        {% block title %}
+            Главная
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'imgs/favicon.ico' %}">
+    {% block links %}{% endblock %}
+</head>
+<body>
+<header>
+    <div class="top">
+        <div class="top-container light-middle-text">
+            <div class="top-left-side">
+                <a href="/" class="light-middle-text"><h4>Мой блог</h4></a>
+            </div>
+            <div class="top-right-side">
+                <div class="top-right-register-or-about">
+                    {% block register_wall %}
+                    <p>Регистрация или стена</p>
+                    {% endblock %}
+                </div>
+                <div class="top-right-login-or-logout">
+                    {% block login_out %}
+                    <p>Вход или выход</p>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <div class="maket">
+        <div class="grid-x">
+            <div>
+                {% block latest_articles %}
+                <p>
+                    RTFM - Read The Fucking Manual.
+                </p>
+                {% endblock %}
+                <hr>
+            </div>
+            <div>
+                {% block latest_comments %}
+                <p>
+                    MTV - Model-Template-View
+                </p>
+                <p>
+                    But MVC - Model-View-Controller
+                </p>
+                {% endblock %}
+            </div>
+        </div>
+        <div class="cell-block" id="auto-margin">
+            <div class="cell-block-child">
+            {% block article %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+<footer>
+    <div class="bottom light-middle-text">
+        <p align="right">
+            Turtle Band, 2017 г.
+        </p>
+    </div>
+</footer>
+</body>
+</html>

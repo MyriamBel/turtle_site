@@ -25,8 +25,9 @@
             </div>
             {% endfor %}
         </div>
+        {% if username %}
         <div>
-            <form action="{% url 'articlesapp:article' article.id %}" method="post">
+            <form name="comment_form" action="{% url 'articlesapp:addcomment' article.id %}" method="post">
                 {% csrf_token %}
                 {{ formset.management_form }}
                 {% for field in form %}
@@ -37,6 +38,7 @@
                 <p><input type="submit" class="button" value="Комментировать" /></p>
             </form>
         </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

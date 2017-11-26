@@ -17,13 +17,23 @@
     <div class="top">
         <div class="top-container light-middle-text">
             <div class="top-left-side">
-                <a href="/" class="light-middle-text"><h4>Мой блог</h4></a>
+                <section>
+                    <a href="/" class="light-middle-text">Мой блог</a>
+                </section>
             </div>
             <div class="top-right-side">
                 <div class="top-right-register-or-about">
-                    {% block register_wall %}
-                    <p>Регистрация или стена</p>
-                    {% endblock %}
+                    <section>
+                            {% if username %}
+                                <a href="{% url 'auth:logout' %}" class="light-middle-text">
+                                        Выйти ({{ username }})
+                                    </a>
+                            {% else %}
+                                    <a href="{% url 'auth:login' %}" class="light-middle-text">
+                                        Войти
+                                    </a>
+                            {% endif %}
+                    </section>
                 </div>
                 <div class="top-right-login-or-logout">
                     {% block login_out %}
@@ -57,8 +67,10 @@
         </div>
         <div class="cell-block" id="auto-margin">
             <div class="cell-block-child">
-            {% block article %}
-            {% endblock %}
+                {% block article %}
+                {% endblock %}
+                {% block login %}
+                {% endblock %}
             </div>
         </div>
     </div>

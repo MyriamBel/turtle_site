@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}">
+{% endblock %}
+{% block login %}
+<div>
+    <form action="{% url 'auth:login' %}" method="post" name="login_form">
+        {% csrf_token %}
+        <p>
+            <label> Имя пользователя </label>
+        </p>
+        <p>
+            <input type="text" name="username">
+        </p>
+        <p>
+            <label> Пароль </label>
+        </p>
+        <p>
+            <input type="text" name="password">
+        </p>
+        {% if login_error %}
+            <label>{{ login_error }}</label>
+        {% endif %}
+        <input type="submit" value="Войти" class="button">
+    </form>
+</div>
+{% endblock %}

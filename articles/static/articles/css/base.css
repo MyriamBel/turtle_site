@@ -59,29 +59,34 @@ footer {
   float: right;
   height: 50px;
   text-align: right;
+
 }
 
 .top-left-side{
+  padding: 10px;
   box-sizing: border-box;
   float: left;
-  align-items: right;
   text-align: left;
   width: 40%;
   height: 50px;
+  font-sizing: 24px;
+  text-width: 1.5;
+  letter-spacing: 1.5;
+  text-rendering: optimizelegibility;
 }
 
 .top-right-register-or-about{
   float:left;
   box-sizing: border-box;
   width: 50%;
-  padding: 2px;
+  padding: 10px;
 }
 
 .top-right-login-or-logout{
   float: right;
   box-sizing: border-box;
   width: 50%;
-  padding: 2px;
+  padding: 10px;
 }
 
 hr {
@@ -116,7 +121,6 @@ hr {
 }
 
 a {
-  line-height: inherit;
   color: #2d2d64;
   text-decoration: none;
   cursor: pointer;
@@ -143,4 +147,8 @@ a {
 
 .light-middle-text{
   color: #fff;
+}
+
+.menu-li{
+  background-color: #2d2d64;
 }

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'articles',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'articles/templates/articles'),
+            os.path.join(BASE_DIR, 'login/templates/login'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -125,6 +127,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     'static', os.path.join(BASE_DIR, 'articles/static/articles'),
+    'static', os.path.join(BASE_DIR, 'login/static/login'),
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticroot')
@@ -134,6 +137,4 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )
 
-print(BASE_DIR)
-print(STATICFILES_DIRS)
 

@@ -11,8 +11,8 @@ body {
 }
 
 header {
-  background-color: #2d2d64;
-  position: fixed;
+  background-color: #2d2d44;
+  position: fixed
   left: 0px;
   top: 0px;
   right: 0px;
@@ -23,7 +23,7 @@ footer {
   width: 100%;
   position: static;
   box-sizing: border-box;
-  background-color: #2d2d64;
+  background-color: #2d2d44;
   display: block;
   letter-spacing: 0.5px;
 }
@@ -121,7 +121,7 @@ hr {
 }
 
 a {
-  color: #2d2d64;
+  color: rgb(255, 153, 80);
   text-decoration: none;
   cursor: pointer;
   }

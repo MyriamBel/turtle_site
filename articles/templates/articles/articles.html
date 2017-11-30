@@ -1,19 +1,54 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/articles.css' %}">
+{% endblock %}
 {% block title %}
 Все статьи
 {% endblock %}
 
 {% block article %}
+<div>
 {% for article in articles %}
     <div>
         <p> Дата публикации: {{ article.article_date }} </p>
         <a href="/article/get/{{ article.id }}/"> <h2>{{ article.article_title }} </h2></a>
         <p> {{ article.article_text }} </p>
-        <p align="right"><a href="/articles/addlike/{{ article.id }}/"><img src="{% static 'articles/imgs/index.png' %}" width="30px" height="30px" class="like-img"></a>{{ article.article_likes }}</p>
+        <p align="right"><a href="/articles/addlike/{{ article.id }}/"><img src="{% static 'articles/imgs/index.png' %}" width="20px" height="25px" class="like-img"></a>{{ article.article_likes }}</p>
         <div class="blend.burn"> </div>
     </div>
     <hr>
 {% endfor %}
+</div>
+<div class="paginator">
+    {% if articles.has_previous %}
+        <a class="box" href="{% url 'articlesapp:articles' articles.previous_page_number %}">
+            &laquo;
+        </a>
+    {% else %}
+        <a class="current box" href="">
+            &laquo;
+        </a>
+    {% endif %}
+    {% for page in articles.paginator.page_range %}
+        {% if page == articles.number %}
+            <a class="current box" href="{% url 'articlesapp:articles' page %}">
+                {{ page }}
+            </a>
+        {% else %}
+            <a class="box" href="{% url 'articlesapp:articles' page %}">
+                {{ page }}
+            </a>
+        {% endif %}
+    {% endfor %}
+    {% if articles.has_next %}
+        <a class="box" href="{% url 'articlesapp:articles' articles.next_page_number %}">
+            &raquo;
+        </a>
+    {% else %}
+        <a class="current box" href="">
+            &raquo;
+        </a>
+    {% endif %}
+</div>
 {% endblock %}

@@ -9,7 +9,7 @@
         {% endblock %}
     </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'imgs/favicon.ico' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'imgs/favicon.png' %}">
     {% block links %}{% endblock %}
 </head>
 <body>
@@ -22,7 +22,7 @@
                 </section>
             </div>
             <div class="top-right-side">
-                <div class="top-right-register-or-about">
+                <div class="top-right-login-or-logout">
                     <section>
                             {% if username %}
                                 <a href="{% url 'auth:logout' %}" class="light-middle-text">
@@ -35,16 +35,23 @@
                             {% endif %}
                     </section>
                 </div>
-                <div class="top-right-login-or-logout">
-                    {% block login_out %}
-                    <p>Вход или выход</p>
-                    {% endblock %}
+                <div class="top-right-register-or-about">
+                    {% if username %}
+                    <a href="/" class="light-middle-text">
+                        О себе
+                    </a>
+                    {% else %}
+                    <a href="{% url 'reg:registration' %}" class="light-middle-text">
+                        Регистрация
+                    </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
 </header>
     <div class="maket">
+        {% block body %}
         <div class="grid-x">
             <div>
                 {% block latest_articles %}
@@ -69,10 +76,9 @@
             <div class="cell-block-child">
                 {% block article %}
                 {% endblock %}
-                {% block login %}
-                {% endblock %}
             </div>
         </div>
+        {% endblock %}
     </div>
 <footer>
     <div class="bottom light-middle-text">

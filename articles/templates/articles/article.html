@@ -20,6 +20,7 @@
             <p> <b>Комментарии: </b></p>
             {% for comment in comments %}
             <div>
+                <p> {{ comment.comments_date }}  {{ comment.comments_from.username }} </p>
                 <p> {{ comment.comments_text }} </p>
                 <hr />
             </div>

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'articles',
     'login',
+    'register',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,7 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'articles/templates/articles'),
             os.path.join(BASE_DIR, 'login/templates/login'),
+            os.path.join(BASE_DIR, 'register/templates/register'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -128,6 +130,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     'static', os.path.join(BASE_DIR, 'articles/static/articles'),
     'static', os.path.join(BASE_DIR, 'login/static/login'),
+    'static', os.path.join(BASE_DIR, 'register/static/register'),
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticroot')

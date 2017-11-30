@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+{% endblock %}
+{% block body %}
+<div>
+    <form action="{% url 'reg:registration' %}" method="post" name="registration_form">
+        {% csrf_token %}
+        {{ formset.management_form }}
+                {% for field in form %}
+                    <h4 class="error-message">{{ field.errors }}</h4>
+                    <p>{{ field.label_tag }}</p>
+                    <p>{{ field }}</p>
+                    <p>{{ field.help_text|striptags }}</p>
+                {% endfor %}
+        <input type="submit" value="Зарегистрироваться" class="button">
+    </form>
+</div>
+{% endblock %}

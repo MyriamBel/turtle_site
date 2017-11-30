@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render, render_to_response, redirect
+from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse

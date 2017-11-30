@@ -31,11 +31,12 @@
   border-top-style: none;
   border-top-width: 0px;
   box-sizing: border-box;
-  color: #2d2d44;
+  color: #2d2d64;
   cursor: pointer;
   display: block;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-style: normal;
-  line-height: 16px;
+  line-height: 14px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -45,7 +46,10 @@
   padding-right: 15px;
   padding-top: 17px;
   text-decoration: none;
-  text-decoration-color: #2d2d44;
+  text-decoration-color: rgb(255, 255, 255);
   text-decoration-line: none;
   text-decoration-style: solid;
+}
+.error-message{
+  color: red;
 }
